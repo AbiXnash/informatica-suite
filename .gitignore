@@ -1,0 +1,86 @@
+###########################################################
+# Global root-level ignores (applies to whole monorepo)
+###########################################################
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Dependency directories
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+
+# Build output (root-level tooling)
+dist/
+build/
+.cache/
+
+###########################################################
+# Backend: Go (informatica-api)
+###########################################################
+
+/informatica-api/bin/
+/informatica-api/build/
+/informatica-api/dist/
+/informatica-api/.air.toml  # Air hot reload file 
+/informatica-api/tmp/
+
+# Go binaries
+/informatica-api/*.exe
+/informatica-api/*.exe~
+/informatica-api/*.dll
+/informatica-api/*.so
+/informatica-api/*.dylib
+/informatica-api/api
+
+# Go test cache
+/informatica-api/.testcache
+/informatica-api/coverage.out
+
+# Go workspace
+/informatica-api/go.work
+/informatica-api/go.work.sum
+
+###########################################################
+# Frontend: SvelteKit (informatica-web)
+###########################################################
+
+/informatica-web/node_modules/
+/informatica-web/.svelte-kit/
+/informatica-web/.vite/
+/informatica-web/build/
+/informatica-web/dist/
+/informatica-web/.env.local
+/informatica-web/.env.production
+/informatica-web/.env.development
+
+# Local Adapter Output
+/informatica-web/.vercel/
+/informatica-web/.netlify/
+
+# SvelteKit error dumps
+/informatica-web/.turbo/
+
