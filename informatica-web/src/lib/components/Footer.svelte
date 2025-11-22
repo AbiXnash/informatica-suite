@@ -1,3 +1,7 @@
+<script>
+	import { updatesModal, notifications } from '$lib/stores/notifications';
+</script>
+
 <footer class="bg-base-200 border-t border-base-300 text-base-content mt-20">
 	<div class="max-w-screen-2xl mx-auto px-6 py-12 md:py-16">
 		<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
