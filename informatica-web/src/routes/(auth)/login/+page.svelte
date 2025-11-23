@@ -1,9 +1,14 @@
 <script>
+	import { loading } from '$lib/stores/loading';
+
 	let email = '';
 	let password = '';
 
 	const handleLogin = () => {
-		console.log('Logging in:', { email, password });
+		console.log('Clicking');
+		loading.set(true, 'Login failed. Please try again.');
+		setTimeout(() => loading.set(false), 1500);
+		console.log('Time up');
 	};
 </script>
 

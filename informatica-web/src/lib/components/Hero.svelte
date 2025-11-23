@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { loading } from '$lib/stores/loading';
 
 	// Stores
 	import { updatesModal, notifications } from '$lib/stores/notifications';
@@ -8,6 +9,13 @@
 
 	let current = 0;
 	let notificationList: Notification[] = [];
+
+	const handleLoading = () => {
+		console.log('Clicking');
+		loading.set(true, 'Login failed. Please try again.');
+		setTimeout(() => loading.set(false), 1500);
+		console.log('Time up');
+	};
 
 	// Subscribe to store
 	notifications.subscribe((n) => (notificationList = n));
@@ -103,14 +111,7 @@
 					</p>
 				</div>
 				<div class="mt-10 flex items-center justify-start gap-6 sm:justify-center">
-					<a
-						onclick={() => updatesModal.set(true)}
-						href="/"
-						class="inline-flex items-center justify-center gap-2 rounded-md bg-pink-500
-						px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-pink-400
-						focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-						focus-visible:outline-pink-500"
-					>
+					<a onclick={handleLoading} href="/" class="btn btn-primary">
 						<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"

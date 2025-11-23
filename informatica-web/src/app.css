@@ -6,3 +6,56 @@
 	themes: cupcake --default;
 	logs: false;
 }
+
+@layer utilities {
+	@keyframes ghost-opacity {
+		0% { opacity: 1; transform: scale(1); }
+		50% { opacity: 0.5; transform: scale(0.9); }
+		100% { opacity: 1; transform: scale(1); }
+	}
+
+	@keyframes bounce-slow {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-10px); }
+	}
+
+	@keyframes strobe {
+		0% { opacity: 1; }
+		50% { opacity: 0; }
+		51% { opacity: 1; }
+		100% { opacity: 1; }
+	}
+
+	@keyframes strobe-color1 {
+		0%, 50%, 100% { fill: rgb(255, 95, 74); }
+		25%, 75% { fill: rgb(16, 53, 115); }
+	}
+
+	@keyframes strobe-color2 {
+		0%, 50%, 100% { fill: #17e300; }
+		25%, 75% { fill: #17e300b4; }
+	}
+
+	/* Tailwind Utility Classes */
+	.animate-ghost-pulse {
+		animation: ghost-opacity 4s infinite ease-in-out;
+	}
+
+	.animate-bounce-slow {
+		animation: bounce-slow 4s infinite ease-in-out;
+	}
+
+	.strobe-led {
+		animation: strobe 0.5s infinite;
+	}
+
+	.strobe-color1 {
+		animation: strobe-color2 0.8s infinite;
+	}
+
+	.strobe-color3 {
+		animation: strobe-color1 0.8s infinite;
+		animation-delay: 3s;
+	}
+}
+

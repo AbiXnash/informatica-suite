@@ -14,8 +14,10 @@
 		if (!dialogRef) return;
 
 		if ($updatesModal) {
+			console.log('open');
 			if (!dialogRef.open) dialogRef.showModal();
 		} else {
+			console.log('close');
 			if (dialogRef.open) dialogRef.close();
 		}
 	});

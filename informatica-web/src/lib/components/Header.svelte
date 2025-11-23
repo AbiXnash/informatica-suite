@@ -93,7 +93,10 @@
 				<!-- Mobile Hamburger -->
 				<button
 					id="toggle"
-					onclick={() => updatesModal.set(true)}
+					onclick={() => {
+						updatesModal.set(true);
+						console.log('clicked');
+					}}
 					class="md:hidden rounded-full p-2 hover:bg-base-200 transition relative"
 					aria-label="Notifications"
 				>
